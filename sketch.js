@@ -1,6 +1,10 @@
 var pendulam
 var Sling
 
+const Engine=Matter.Engine;
+const world = Matter.World;
+const bodies =Matter.bodies;
+const constraint =Matter.constraint
 
 function preload()
 {
@@ -9,14 +13,11 @@ function preload()
 }
 
 function setup() {
+
+	Pendulam = new Pendulam(200,200,20,20);
 	
- 
-
-}
 
 
-
-function drawSprites(){
 	createCanvas(windowWidth/2  ,  windowHeight/1.5);
 	engine=Engine.create();
 	world=engine.world
@@ -27,38 +28,24 @@ function drawSprites(){
 		mouse:canvasmouse
 	};
 
-	mConstrain=MouseConstrain.cretae(engine,option);
-	world.add(world,mconstrain);
-
-
-
-}
-
-
-
-function mouseDragged(){
-	Matter.body.setPosition(pendulam.body,{x:mouseX , y:mouseY})
-};
-
+	mConstraint=MouseConstraint.create(engine,option);
+	World.add(world,mConstraint);
 
  
 
-
-
-
-
-
-
-
+}
 
 function draw() {
   
-  background("white");
+  background("red");
 
   
   drawSprites();
  
 }
 
+function mouseDragged(){
+	Matter.body.setPosition(pendulam.body,{x:mouseX , y:mouseY})
+};
 
 
