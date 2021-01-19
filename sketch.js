@@ -1,10 +1,10 @@
 var pendulam
-var Sling
+var sling
 
 const Engine=Matter.Engine;
 const world = Matter.World;
-const bodies =Matter.bodies;
-const constraint =Matter.constraint
+const bodies =Matter.Bodies;
+const constraint =Matter.Constraint
 
 function preload()
 {
