@@ -22,11 +22,9 @@ class Pendulam{
         translate(pos.x,pos.y)
         rotate(angle);
         noStroke();
-        Fill(this.color);
+        fill(this.color);
         ellipse(0,0,60,60);
         pop();
-        
-
     }
 
     }

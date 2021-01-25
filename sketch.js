@@ -1,28 +1,21 @@
-var pendulam
-var sling
+var pendulam1,pendulam2,pendulam3,pendulam4,pendulam5;
+var sling1,sling1,sling1,sling,sling5;
 
 const Engine=Matter.Engine;
-const world = Matter.World;
-const bodies =Matter.Bodies;
-const constraint =Matter.Constraint
+const World = Matter.World;
+const Bodies =Matter.Bodies;
+const Constraint =Matter.Constraint;
 
-function preload()
-{
-	
-	
-}
+const MouseConstraint = Matter.MouseConstraint;
+
 
 function setup() {
-
-	Pendulam = new Pendulam(200,200,20,20);
-	
-
 
 	createCanvas(windowWidth/2  ,  windowHeight/1.5);
 	engine=Engine.create();
 	world=engine.world
 
-	let canvasmouse=mouse.create(canvas.elt);
+	let canvasmouse=Mouse.create(canvas.elt);
 	canvasmouse.pixelRatio=pixelDensity();
 	let option={
 		mouse:canvasmouse
@@ -31,6 +24,13 @@ function setup() {
 	mConstraint=MouseConstraint.create(engine,option);
 	World.add(world,mConstraint);
 
+	pendulam1 = new Pendulam(340,450,"red");
+	/*pendulam2 = new Pendulam(340,500,"red");
+	pendulam3 = new Pendulam(340,500,"red");
+	pendulam4= new Pendulam(340,600,"red");
+	pendulam5 = new Pendulam(340,650,"red"); */
+
+	sling1 = new Sling(pendulam1.body,{x : 340,y : 200});
  
 
 }
@@ -38,6 +38,9 @@ function setup() {
 function draw() {
   
   background("red");
+  Engine.update(engine);
+  pendulam1.display();
+  sling1.display();
 
   
   drawSprites();

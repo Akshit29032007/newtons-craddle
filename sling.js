@@ -11,8 +11,8 @@ length:220
 };
 
 this.pointB=pointB;
-this.pointx=pointA.x;
-this.pointy=pointA.y - 250;
+this.pointx=bodyA.x;
+this.pointy=bodyA.y - 250;
 this.sling=Constraint.create(option);
 World.add(world, this.sling);
 }
@@ -24,8 +24,8 @@ display() {
         var pointB=this.pointB;
         push();
         strokeweight(3.5);
-        stroke("#fff");
-        line(pointB.x,popintB.y,pointA.x,pointA.y);
+        stroke("#fff"); 
+        line(pointB.x,pointB.y,pointA.x,pointA.y);
         pop();
 
     }
