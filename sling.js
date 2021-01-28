@@ -23,7 +23,7 @@ display() {
         var pointA=this.sling.bodyA.position;
         var pointB=this.pointB;
         push();
-        strokeweight(3.5);
+        strokeWeight(3.5);
         stroke("#fff"); 
         line(pointB.x,pointB.y,pointA.x,pointA.y);
         pop();
